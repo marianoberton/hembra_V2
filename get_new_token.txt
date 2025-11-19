@@ -1,0 +1,29 @@
+# INSTRUCCIONES PARA OBTENER NUEVO ACCESS TOKEN DE TIENDANUBE
+
+## PASO 1: Obtener código de autorización
+Ve a esta URL en tu navegador:
+https://www.tiendanube.com/apps/authorize?client_id=19142&response_type=code&scope=read_products,read_orders,read_customers,read_store,write_products&redirect_uri=http://localhost:3000
+
+## PASO 2: Cuando obtengas el código, ejecuta esto en PowerShell:
+$body = @{
+    client_id = "19142"
+    client_secret = "baf820e29599a64063e56f03bfde784ae71b9d5000a0f46d"
+    grant_type = "authorization_code"
+    code = "TU_CODIGO_AQUI"
+}
+$response = Invoke-RestMethod -Uri "https://www.tiendanube.com/apps/authorize/token" -Method POST -Body $body -ContentType "application/x-www-form-urlencoded"
+$response
+
+## PASO 3: Probar el nuevo token
+$headers = @{ "Authorization" = "bearer TU_NUEVO_ACCESS_TOKEN" }
+Invoke-RestMethod -Uri "https://api.tiendanube.com/v1/6434140/products" -Headers $headers
+
+## ALTERNATIVA CON CURL (Windows):
+curl -X POST "https://www.tiendanube.com/apps/authorize/token" ^
+     -H "Content-Type: application/x-www-form-urlencoded" ^
+     -d "client_id=19142&client_secret=baf820e29599a64063e56f03bfde784ae71b9d5000a0f46d&grant_type=authorization_code&code=TU_CODIGO_AQUI"
+
+## TESTAR CON CURL:
+curl -X GET "https://api.tiendanube.com/v1/6434140/products" ^
+     -H "Authorization: bearer TU_NUEVO_ACCESS_TOKEN" ^
+     -H "User-Agent: HembraApp/1.0" 

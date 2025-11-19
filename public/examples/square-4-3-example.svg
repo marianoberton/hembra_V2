@@ -1,0 +1,64 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8f9fa"/>
+  
+  <!-- Grid lines for reference -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#e9ecef" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Main content area -->
+  <rect x="100" y="80" width="1000" height="740" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="8"/>
+  
+  <!-- Product showcase area (balanced composition) -->
+  <rect x="150" y="130" width="500" height="400" fill="#f1f3f4" rx="4"/>
+  <rect x="250" y="230" width="120" height="80" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="4"/>
+  <text x="310" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Mesa Bea</text>
+  
+  <rect x="430" y="180" width="80" height="120" fill="#ffffff" stroke="#dee2e6" stroke-width="2" rx="4"/>
+  <text x="470" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">Florero</text>
+  
+  <!-- Content area -->
+  <rect x="700" y="130" width="450" height="400" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="720" y="170" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#212529">Colección Artesanal</text>
+  
+  <!-- Description lines -->
+  <rect x="720" y="200" width="380" height="2" fill="#dee2e6"/>
+  <rect x="720" y="230" width="320" height="2" fill="#dee2e6"/>
+  <rect x="720" y="260" width="400" height="2" fill="#dee2e6"/>
+  <rect x="720" y="290" width="280" height="2" fill="#dee2e6"/>
+  <rect x="720" y="320" width="350" height="2" fill="#dee2e6"/>
+  
+  <!-- Features -->
+  <circle cx="730" cy="370" r="4" fill="#28a745"/>
+  <text x="750" y="375" font-family="Arial, sans-serif" font-size="14" fill="#495057">Diseño sustentable</text>
+  
+  <circle cx="730" cy="400" r="4" fill="#28a745"/>
+  <text x="750" y="405" font-family="Arial, sans-serif" font-size="14" fill="#495057">Materiales reciclados</text>
+  
+  <circle cx="730" cy="430" r="4" fill="#28a745"/>
+  <text x="750" y="435" font-family="Arial, sans-serif" font-size="14" fill="#495057">Hecho a mano</text>
+  
+  <!-- Call to action -->
+  <rect x="720" y="470" width="140" height="40" fill="#28a745" rx="4"/>
+  <text x="790" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">Explorar</text>
+  
+  <!-- Bottom info section -->
+  <rect x="150" y="580" width="1000" height="200" fill="#f8f9fa" rx="4"/>
+  <text x="600" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#495057">Información Adicional</text>
+  
+  <rect x="200" y="650" width="800" height="2" fill="#dee2e6"/>
+  <rect x="250" y="680" width="700" height="2" fill="#dee2e6"/>
+  <rect x="300" y="710" width="600" height="2" fill="#dee2e6"/>
+  
+  <!-- Dimensions label -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#495057">Cuadrado 4:3 - 1200x900px</text>
+  
+  <!-- Ratio indicator -->
+  <text x="600" y="870" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Ideal para: Composiciones balanceadas, múltiples productos, galerías</text>
+</svg>

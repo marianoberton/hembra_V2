@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/liberation-sans');
+@import url("https://p.typekit.net/p.css?s=1&k=zzl1xzu&ht=tk&f=39504.39505.39506.39507.39508.39509&a=12822158&app=typekit&e=css");
+
+/* Root CSS variables for fonts */
+:root {
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-helvetica: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+}
+@font-face {
+  font-family: 'Helvetica Neue LT Pro';
+  src: local('Helvetica Neue'), local('HelveticaNeue'), 
+       url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue LT Pro';
+  src: local('Helvetica Neue'), local('HelveticaNeue'),
+       url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/0230dd/00000000000000007735bb33/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/0230dd/00000000000000007735bb33/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/0230dd/00000000000000007735bb33/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/aed66e/00000000000000007735bb35/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/aed66e/00000000000000007735bb35/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/aed66e/00000000000000007735bb35/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/160664/00000000000000007735bb32/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/160664/00000000000000007735bb32/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/160664/00000000000000007735bb32/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/fe63ce/00000000000000007735bb4b/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),url("https://use.typekit.net/af/fe63ce/00000000000000007735bb4b/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),url("https://use.typekit.net/af/fe63ce/00000000000000007735bb4b/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:500;font-stretch:normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/305037/00000000000000007735bb39/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/305037/00000000000000007735bb39/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/305037/00000000000000007735bb39/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"neue-haas-grotesk-text";
+src:url("https://use.typekit.net/af/68a7c6/00000000000000007735bb3d/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/68a7c6/00000000000000007735bb3d/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/68a7c6/00000000000000007735bb3d/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:700;font-stretch:normal;
+}
+
+.tk-neue-haas-grotesk-text { font-family: "neue-haas-grotesk-text",sans-serif; }
+
+/* Using system Helvetica Neue font */
+
+/* OnlineWebFonts - Liberation Sans */
+@font-face {
+    font-family: "Liberation Sans";
+    src: url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.eot");
+    src: url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.eot?#iefix") format("embedded-opentype"),
+         url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.woff2") format("woff2"),
+         url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.woff") format("woff"),
+         url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.ttf") format("truetype"),
+         url("https://db.onlinewebfonts.com/t/787d6e2d0b2dc681350f981d634ddfbf.svg#Liberation Sans") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Custom navbar button hover effects */
+.nav-button {
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Removed conflicting hover styles - now handled by Tailwind classes */
+
+/* Tienda button with arrow animation */
+.tienda-button {
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tienda-button:hover {
+  /* Keep original color, no background change */
+}
+
+.tienda-button::after {
+  content: '→';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  color: black;
+}
+
+.tienda-button:hover::after {
+  right: 12px;
+  opacity: 1;
+}
+
+.tienda-button span {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.tienda-button:hover span {
+  transform: translateX(-12px);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #ffff00;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e5e5e5;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  
+  /* Nueva paleta principal - Verdes orgánicos */
+  --nyanza: #e9f5db;
+  --tea-green: #cedbbf;
+  --sage: #b3c1a2;
+  --sage-alt: #a2ae92;
+  --moss-green: #909b82;
+  --moss-green-alt: #94a27f;
+  --moss-green-alt2: #8e9d75;
+  --moss-green-alt3: #87986a;
+  --moss-green-alt4: #7c8e60;
+  --reseda-green: #718355;
+  
+  /* Nueva paleta de contraste - Beavers/Tierras */
+  --beaver: #a8836d;
+  --beaver-alt: #ab8773;
+  --beaver-alt2: #ae8b77;
+  --beaver-alt3: #b18f7c;
+  --beaver-alt4: #b2917e;
+  --beaver-alt5: #b3927f;
+  --beaver-alt6: #b59582;
+  --beaver-alt7: #b69785;
+  --beaver-alt8: #b99b89;
+  --warm-white: #fefcfb;
+  
+  /* Paleta orgánica para fondos y textos */
+  --bg-primary: var(--nyanza);
+  --bg-secondary: var(--tea-green);
+  --bg-accent: var(--sage);
+  --bg-contrast: var(--beaver);
+  --text-primary: var(--reseda-green);
+  --text-secondary: var(--moss-green-alt4);
+  --text-accent: var(--beaver-alt3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Nueva paleta - Clases utilitarias */
+.bg-organic-light {
+  background-color: var(--nyanza);
+}
+
+.bg-organic-medium {
+  background-color: var(--tea-green);
+}
+
+.bg-organic-accent {
+  background-color: var(--sage);
+}
+
+.bg-organic-contrast {
+  background-color: var(--beaver);
+}
+
+.bg-organic-warm {
+  background-color: var(--warm-white);
+}
+
+.text-organic-primary {
+  color: var(--reseda-green);
+}
+
+.text-organic-secondary {
+  color: var(--moss-green-alt4);
+}
+
+.text-organic-accent {
+  color: var(--beaver-alt3);
+}
+
+.border-organic-primary {
+  border-color: var(--sage);
+}
+
+.border-organic-accent {
+  border-color: var(--beaver-alt2);
+}
+
+/* Typography */
+.text-display {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Estilos por defecto para cards 5 y 20 */
+.card-5-title,
+.card-20-title {
+  font-size: clamp(16px, 2.6vw, 22px) !important;
+}
+
+.card-5-subtitle,
+.card-20-subtitle {
+  font-size: clamp(16px, 2.6vw, 20px) !important;
+}
+
+.card-5-content,
+.card-20-content {
+  font-size: clamp(12px, 2vw, 14px) !important;
+}
+
+/* Media query específica para cards 5 y 20 desde 1024px hasta 1099px */
+@media (min-width: 1024px) and (max-width: 1099px) {
+  /* Aumentar tamaño de fuente en 10 puntos adicionales para las cards específicas */
+  .card-5-title,
+  .card-20-title {
+    font-size: clamp(24px, 1.8vw, 30px) !important;
+  }
+  
+  .card-5-subtitle,
+  .card-20-subtitle {
+    font-size: clamp(24px, 1.6vw, 28px) !important;
+  }
+  
+  .card-5-content,
+  .card-20-content {
+    font-size: clamp(20px, 1.2vw, 22px) !important;
+  }
+}
+
+/* Media query para cards 5 y 20 desde 1100px en adelante - tamaño aumentado +6px */
+@media (min-width: 1100px) {
+  .card-5-title,
+  .card-20-title {
+    font-size: clamp(22px, 2.6vw, 28px) !important;
+  }
+  
+  .card-5-subtitle,
+  .card-20-subtitle {
+    font-size: clamp(22px, 2.6vw, 26px) !important;
+  }
+  
+  .card-5-content,
+  .card-20-content {
+    font-size: clamp(18px, 2vw, 20px) !important;
+  }
+}
+
+.text-headline {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 108%;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.text-headline-white {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 108%;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.text-body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--gray-600);
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+/* Navigation and UI Elements - Refined Letter Spacing */
+.text-nav {
+  letter-spacing: -0.01em;
+}
+
+.text-button {
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.text-elegant {
+  letter-spacing: -0.02em;
+}
+
+/* Grid System */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+/* Card Components */
+.card {
+  background: var(--background);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.02);
+}
+
+/* Accent Elements */
+.accent-bg {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+/* Layout Utilities */
+.full-height {
+  min-height: 100vh;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 0;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Images */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Image Card Specific Styles */
+.image-card-container {
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-card-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.btn-primary:hover {
+  background-color: var(--gray-800);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.btn-accent:hover {
+  background-color: #e6e600;
+}
+
+/* PROWL Card Styles */
+.prowl-label {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 102%;
+  text-align: start;
+  color: #333333;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.prowl-label-white {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 102%;
+  text-align: start;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.prowl-label-hover {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 102%;
+  text-align: start;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.prowl-arrow {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 102%;
+  text-align: start;
+  color: #000000;
+  text-decoration: none;
+  text-transform: none;
+  transition: opacity 0.2s ease;
+}
+
+.prowl-arrow-white {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 102%;
+  text-align: start;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: none;
+  transition: opacity 0.2s ease;
+}
+
+.prowl-arrow:hover {
+  opacity: 0.8;
+}
+
+.prowl-arrow-white:hover {
+  opacity: 0.8;
+}
+
+/* CardTitleSubtitle Specific Styles */
+.card-title-subtitle-main {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 95%;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.card-title-subtitle-description {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 102%;
+  text-align: center;
+  color: rgb(51, 51, 51);
+  text-decoration: underline;
+}
+
+/* Tienda font utilities */
+.font-serif {
+  font-family: var(--font-lora), serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Paleta orgánica - Nuevas cards de texto */
+.card-organic {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+.card-organic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(113, 131, 85, 0.15);
+}
+
+.card-organic-text {
+  background: linear-gradient(135deg, var(--tea-green) 0%, var(--sage) 100%);
+  color: var(--reseda-green);
+}
+
+.card-organic-accent {
+  background: linear-gradient(135deg, var(--beaver-alt2) 0%, var(--beaver) 100%);
+  color: var(--warm-white);
+}
+
+.card-organic-light {
+  background: linear-gradient(135deg, var(--nyanza) 0%, var(--tea-green) 100%);
+  color: var(--moss-green-alt4);
+}
+
+/* Gradient overlays para cards */
+.gradient-organic-primary {
+  background: linear-gradient(135deg, var(--nyanza) 0%, var(--tea-green) 50%, var(--sage) 100%);
+}
+
+.gradient-organic-contrast {
+  background: linear-gradient(135deg, var(--beaver-alt3) 0%, var(--beaver) 50%, var(--beaver-alt2) 100%);
+}
+
+.gradient-organic-subtle {
+  background: linear-gradient(135deg, var(--sage) 0%, var(--moss-green-alt) 100%);
+}

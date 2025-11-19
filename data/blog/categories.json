@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Diseño",
+    "slug": "diseno",
+    "description": "Artículos sobre diseño y creatividad"
+  },
+  {
+    "id": "2",
+    "name": "Sustentabilidad",
+    "slug": "sustentabilidad",
+    "description": "Contenido sobre sostenibilidad"
+  },
+  {
+    "id": "3",
+    "name": "Proceso",
+    "slug": "proceso",
+    "description": "Detrás de escenas de nuestros proyectos"
+  }
+]
