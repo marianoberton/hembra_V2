@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import BaseCard from './BaseCard';
+import Link from 'next/link';
 
 interface TypographyItem {
   text: string;
@@ -20,93 +22,56 @@ interface TypographyCardProps {
 
 export default function TypographyCard({
   items,
-  backgroundColor = 'bg-white border border-gray-200',
+  backgroundColor = '#FFFFFF',
   cardNumber,
   className = '',
-  label = 'Work',
+  label,
   showArrow = true,
   href
 }: TypographyCardProps) {
-  // Check if backgroundColor is a hex color or CSS class
-  const isHexColor = backgroundColor.startsWith('#');
   
-  // Determine if we need white text for dark backgrounds
-  const isDarkBackground = backgroundColor === 'bg-black' || 
-                           backgroundColor === 'bg-gray-900' || 
-                           backgroundColor === 'bg-slate-900' ||
-                           (isHexColor && (
-                             backgroundColor === '#000000' ||
-                             backgroundColor.toLowerCase() === '#000'
-                           ));
-
-  // Auto-select label and arrow classes based on background
+  const Wrapper = href ? Link : 'div';
+  
+  // Colores de texto según fondo
+  const isDarkBackground = backgroundColor === '#3D4A3D' || backgroundColor === '#000000';
   const labelClass = isDarkBackground ? 'prowl-label-white' : 'prowl-label';
   const arrowClass = isDarkBackground ? 'prowl-arrow-white' : 'prowl-arrow';
 
-  // Card styling with consistent padding and height
-  const cardClasses = `${isHexColor ? '' : backgroundColor} p-4 md:p-6 pb-16 flex flex-col justify-center ${className}`;
-  
-  const cardStyle: React.CSSProperties = {
-    minHeight: '200px',
-    position: 'relative',
-    ...(isHexColor && { backgroundColor }),
-    ...(isDarkBackground && { color: '#ffffff' })
-  };
-
   return (
-    <BaseCard 
-      className={cardClasses}
-      style={cardStyle}
-      cardNumber={cardNumber}
-      href={href}
+    <Wrapper 
+      href={href || ''}
+      // Ajustado min-h a 300px para consistencia con ThreeDTextCard y LogoCard
+      className={`relative w-full h-full min-h-[300px] flex flex-col justify-between p-8 rounded-2xl transition-all duration-500 hover:scale-[1.01] cursor-pointer group ${className}`}
+      style={{ backgroundColor }}
     >
-      {/* Label - positioned with equal distance from top */}
+      {/* Label Superior */}
       {label && (
-        <div 
-          className={`absolute top-6 left-1/2 transform -translate-x-1/2 ${labelClass}`}
-          style={{ 
-            zIndex: 10
-          }}
-        >
+        <div className={`w-full flex justify-center h-5 ${labelClass}`}>
           {label}
         </div>
       )}
 
-      {/* Main content area - better centering for mobile */}
-      <div 
-        className="absolute inset-0 flex flex-col justify-center items-center px-4"
-        style={{ 
-          paddingTop: '50px',
-          paddingBottom: '50px',
-          zIndex: 1
-        }}
-      >
-        <div className="space-y-1 text-center w-full">
-          {items.map((item, index) => (
-            <div 
-              key={index} 
-              className={item.className || 'font-light'}
-              style={{
-                fontSize: item.fontSize || '32px',
-                color: isDarkBackground ? '#ffffff' : (item.color || 'inherit'),
-                fontFamily: '"Helvetica Neue", sans-serif',
-                lineHeight: '1.2'
-              }}
-            >
-              {item.text}
-            </div>
-          ))}
-        </div>
+      {/* Contenido Central */}
+      <div className="flex flex-col items-center justify-center text-center w-full flex-grow z-0 px-4">
+        {items.map((item, index) => (
+          <h2 
+            key={index}
+            className="leading-tight tracking-tight"
+            style={{
+              fontFamily: 'Helvetica Neue, sans-serif',
+              fontSize: '32px',
+              fontWeight: '400',
+              color: item.color || (isDarkBackground ? '#ffffff' : '#000000')
+            }}
+          >
+            {item.text}
+          </h2>
+        ))}
       </div>
 
-      {/* Arrow - positioned with equal distance from bottom */}
+      {/* Flecha Inferior */}
       {showArrow && (
-        <div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center justify-center"
-          style={{ 
-            zIndex: 10
-          }}
-        >
+        <div className="w-full flex justify-center h-6">
           <span 
             className={arrowClass}
             style={{
@@ -117,6 +82,6 @@ export default function TypographyCard({
           >→</span>
         </div>
       )}
-    </BaseCard>
+    </Wrapper>
   );
 }
