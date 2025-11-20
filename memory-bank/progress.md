@@ -211,3 +211,4 @@ We've successfully created a **complete premium e-commerce experience** that dem
 The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora" looked like and how we've addressed it with **premium animations, sophisticated interactions, and polished user experience**.
 
 **Next step**: Deploy V2.0 Premium components to replace V1.0 in the main store!
+[2025-11-20] Home: Loader visible usando Suspense + import dinámico. Links: hembra_V2/main
