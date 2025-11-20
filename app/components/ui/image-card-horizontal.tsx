@@ -23,18 +23,26 @@ export default function ImageCardHorizontal({
   cardNumber,
   showArrow = true
 }: ImageCardHorizontalProps) {
+  const [errored, setErrored] = React.useState(false);
   return (
     <div className="w-full">
-      <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 cursor-pointer group min-h-[280px] sm:min-h-[320px] lg:min-h-[360px]">
+      <div className="relative w-full rounded-xl overflow-hidden bg-gray-200 cursor-pointer group min-h-[220px] sm:min-h-[260px] lg:min-h-[300px]">
         {/* Background Image */}
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="max((min(100vw, 1920px) - 56px) / 3, 1px)"
-          className="object-cover group-hover:scale-105 md:group-hover:scale-105 group-active:scale-105 transition-transform duration-700"
-          priority={!!(cardNumber && cardNumber <= 12)}
-        />
+        {!errored ? (
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes="max((min(100vw, 1920px) - 56px) / 3, 1px)"
+            className="object-cover group-hover:scale-105 md:group-hover:scale-105 group-active:scale-105 transition-transform duration-700"
+            priority={!!(cardNumber && cardNumber <= 12)}
+            onError={() => setErrored(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300">
+            <span className="text-sm text-neutral-500">Sin imagen</span>
+          </div>
+        )}
 
         {/* Card Number - Black background on hover */}
         {cardNumber && (

@@ -224,7 +224,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* 19. VIDEO CENTRAL */}
-            <motion.div variants={itemVariants} className={`${cardWrapperClass} hidden lg:block overflow-hidden rounded-2xl min-h-[500px]`}>
+            <motion.div variants={itemVariants} className={`${cardWrapperClass} hidden lg:block overflow-hidden rounded-2xl min-h-[360px]`}>
               <div className="absolute inset-0">
                 <video
                   src="/19.mp4"
