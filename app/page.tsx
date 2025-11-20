@@ -4,7 +4,11 @@ import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import Loader from './components/ui/Loader'
 
-const HomeContent = dynamic(() => import('./HomeContent'), { suspense: true })
+// Forzamos un pequeño delay para que el loader sea visible incluso en dev
+const HomeContent = dynamic(
+  () => new Promise((resolve) => setTimeout(() => resolve(import('./HomeContent')), 800)),
+  { suspense: true }
+)
 
 export default function Page() {
   return (
