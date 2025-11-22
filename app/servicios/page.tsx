@@ -11,31 +11,31 @@ const services = [
     id: 'estrategia',
     title: 'Estrategia Circular',
     description: 'Impulsamos la revalorización de recursos como motor de innovación. Diseñamos estrategias que reducen la dependencia de materiales vírgenes y promueven modelos de producción regenerativos. Acompañamos a empresas, organizaciones e instituciones en la transición hacia sistemas circulares que prolongan la vida útil de los materiales y minimizan el desperdicio desde la raíz.',
-    image: '/images/servicios/estrategia.jpg'
+    image: '/images/servicios/Servicios.jpg'
   },
   {
     id: 'alma',
     title: 'Diseño de Objetos con Alma',
     description: 'Creamos productos sostenibles con historia, emoción y propósito. Cada objeto que diseñamos busca establecer un vínculo genuino entre las personas, los materiales y su entorno. Valoramos la calidad, la durabilidad y el sentido profundo detrás de cada forma. Diseñamos para que cada pieza tenga una vida larga y significativa.',
-    image: '/images/servicios/alma.jpg'
+    image: '/images/servicios/Servicios2.jpg'
   },
   {
     id: 'innovacion',
     title: 'Innovación Sostenible',
     description: 'Integramos creatividad y conocimiento técnico para transformar los desafíos ambientales en soluciones concretas. Aplicamos principios de ecodiseño, biomímesis y biodiseño desde la etapa cero del ciclo de vida, con el objetivo de evitar la generación de residuos y reducir el impacto negativo desde el origen. Diseñar es, para nosotras, una forma de anticipar un futuro mejor.',
-    image: '/images/servicios/innovacion.jpg'
+    image: '/images/servicios/Servicios3.jpg'
   },
   {
     id: 'prototipado',
     title: 'Prototipado y Desarrollo',
     description: 'Materializamos nuestras ideas —y las de nuestros clientes— a través de representaciones visuales precisas y prototipos físicos. Este proceso permite experimentar el diseño en todas sus dimensiones: forma, función y experiencia. Trabajamos de manera iterativa, cuidando cada etapa del desarrollo para llegar a resultados coherentes y funcionales.',
-    image: '/images/servicios/prototipado.jpg'
+    image: '/images/servicios/Servicios4.jpg'
   },
   {
     id: 'produccion',
     title: 'Producción Responsable',
     description: 'Ofrecemos soluciones personalizadas que respetan al planeta y a las personas. Producimos diseños propios y ajenos de forma consciente, priorizando procesos éticos, materiales recuperados y colaboraciones con talleres y cooperativas locales. La producción no es solo un resultado: es una declaración de valores.',
-    image: '/images/servicios/produccion.jpg'
+    image: '/images/servicios/Servicios5.jpg'
   }
 ];
 
