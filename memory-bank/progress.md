@@ -215,3 +215,6 @@ The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora"
 [2025-11-20] home: Reducir espacio vertical antes del footer. Links: hembra_V2/main
   - Bajé min-heights en image-card-(horizontal|hover|decorative) y en el video central.
   - Agregué fallback visible para imágenes faltantes ("Sin imagen").
+[2025-11-20] servicios: Usar imágenes desde public/images/servicios con fallback. Links: hembra_V2/main
+  - Actualicé rutas de /servicios a /images/servicios/*.jpg.
+  - Implementé fallback visible cuando falta la imagen.
