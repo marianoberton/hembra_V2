@@ -218,3 +218,6 @@ The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora"
 [2025-11-20] servicios: Usar imágenes desde public/images/servicios con fallback. Links: hembra_V2/main
   - Actualicé rutas de /servicios a /images/servicios/*.jpg.
   - Implementé fallback visible cuando falta la imagen.
+[2025-11-22] servicios: Preparar carpeta y tracking para imágenes reales. Links: origin/main
+  - Agregué `.gitkeep` y `README.md` en `public/images/servicios/`.
+  - Confirmé remotos: usaremos `origin` (repo anterior) para subir imágenes.
