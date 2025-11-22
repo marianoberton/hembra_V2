@@ -48,7 +48,23 @@ const ServiceStrip = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [errored, setErrored] = useState(false);
+  const [usePlaceholder, setUsePlaceholder] = useState(false);
+  const [srcIndex, setSrcIndex] = useState(0);
+  const srcCandidates = (() => {
+    const base = service.image.replace(/\.(jpg|jpeg|png|webp|avif)$/i, '');
+    // Orden de preferencia
+    const list = [
+      `${base}.webp`,
+      `${base}.jpg`,
+      `${base}.png`,
+      `${base}.avif`,
+    ];
+    // Si service.image no tenía extensión reconocida, lo añadimos al inicio
+    if (!/\.(jpg|jpeg|png|webp|avif)$/i.test(service.image)) {
+      list.unshift(service.image);
+    }
+    return list;
+  })();
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -78,19 +94,29 @@ const ServiceStrip = ({
     >
       {/* 1. TIRA DE IMAGEN */}
       <div className="relative w-full h-[200px] md:h-[300px] lg:h-[380px] rounded-3xl overflow-hidden cursor-pointer bg-gray-200">
-        {!errored ? (
+        {!usePlaceholder ? (
           <Image
-            src={service.image}
+            src={srcCandidates[srcIndex]}
             alt={service.title}
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
             priority={index < 2}
-            onError={() => setErrored(true)}
+            onError={() => {
+              if (srcIndex < srcCandidates.length - 1) {
+                setSrcIndex((i) => i + 1);
+              } else {
+                setUsePlaceholder(true);
+              }
+            }}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300">
-            <span className="text-sm text-neutral-500">Sin imagen</span>
-          </div>
+          <Image
+            src="/placeholder.svg"
+            alt={`${service.title} (placeholder)`}
+            fill
+            className="object-cover"
+            priority={false}
+          />
         )}
         
         {/* Título sobre imagen (visible solo cuando está CERRADO) */}
