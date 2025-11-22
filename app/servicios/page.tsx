@@ -11,31 +11,31 @@ const services = [
     id: 'estrategia',
     title: 'Estrategia Circular',
     description: 'Impulsamos la revalorización de recursos como motor de innovación. Diseñamos estrategias que reducen la dependencia de materiales vírgenes y promueven modelos de producción regenerativos. Acompañamos a empresas, organizaciones e instituciones en la transición hacia sistemas circulares que prolongan la vida útil de los materiales y minimizan el desperdicio desde la raíz.',
-    image: '/images/hero1.jpg' //
+    image: '/images/servicios/estrategia.jpg'
   },
   {
     id: 'alma',
     title: 'Diseño de Objetos con Alma',
     description: 'Creamos productos sostenibles con historia, emoción y propósito. Cada objeto que diseñamos busca establecer un vínculo genuino entre las personas, los materiales y su entorno. Valoramos la calidad, la durabilidad y el sentido profundo detrás de cada forma. Diseñamos para que cada pieza tenga una vida larga y significativa.',
-    image: '/images/hero2.jpg'
+    image: '/images/servicios/alma.jpg'
   },
   {
     id: 'innovacion',
     title: 'Innovación Sostenible',
     description: 'Integramos creatividad y conocimiento técnico para transformar los desafíos ambientales en soluciones concretas. Aplicamos principios de ecodiseño, biomímesis y biodiseño desde la etapa cero del ciclo de vida, con el objetivo de evitar la generación de residuos y reducir el impacto negativo desde el origen. Diseñar es, para nosotras, una forma de anticipar un futuro mejor.',
-    image: '/images/hero3.jpg'
+    image: '/images/servicios/innovacion.jpg'
   },
   {
     id: 'prototipado',
     title: 'Prototipado y Desarrollo',
     description: 'Materializamos nuestras ideas —y las de nuestros clientes— a través de representaciones visuales precisas y prototipos físicos. Este proceso permite experimentar el diseño en todas sus dimensiones: forma, función y experiencia. Trabajamos de manera iterativa, cuidando cada etapa del desarrollo para llegar a resultados coherentes y funcionales.',
-    image: '/images/10work.avif'
+    image: '/images/servicios/prototipado.jpg'
   },
   {
     id: 'produccion',
     title: 'Producción Responsable',
     description: 'Ofrecemos soluciones personalizadas que respetan al planeta y a las personas. Producimos diseños propios y ajenos de forma consciente, priorizando procesos éticos, materiales recuperados y colaboraciones con talleres y cooperativas locales. La producción no es solo un resultado: es una declaración de valores.',
-    image: '/images/11work.avif'
+    image: '/images/servicios/produccion.jpg'
   }
 ];
 
@@ -48,6 +48,7 @@ const ServiceStrip = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [errored, setErrored] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 1024);
@@ -77,13 +78,20 @@ const ServiceStrip = ({
     >
       {/* 1. TIRA DE IMAGEN */}
       <div className="relative w-full h-[200px] md:h-[300px] lg:h-[380px] rounded-3xl overflow-hidden cursor-pointer bg-gray-200">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover transition-transform duration-1000 group-hover:scale-105"
-          priority={index < 2}
-        />
+        {!errored ? (
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            priority={index < 2}
+            onError={() => setErrored(true)}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-200 to-neutral-300">
+            <span className="text-sm text-neutral-500">Sin imagen</span>
+          </div>
+        )}
         
         {/* Título sobre imagen (visible solo cuando está CERRADO) */}
         <motion.div 
