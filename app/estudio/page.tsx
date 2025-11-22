@@ -87,27 +87,7 @@ export default function EstudioPage() {
         </div>
       </section>
 
-      {/* 2. VISUAL BREAK - 2 Columns Full Width */}
-      <section className="w-full mb-24 px-2 sm:px-4 lg:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-          <div className="relative h-[600px] md:h-[800px] w-full overflow-hidden rounded-3xl">
-            <Image
-              src="/images/1work.avif" 
-              alt="Proceso de diseño Hembra"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-1000"
-            />
-          </div>
-          <div className="relative h-[600px] md:h-[800px] w-full overflow-hidden rounded-3xl">
-            <Image
-              src="/images/2work.avif" 
-              alt="Taller Hembra"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-1000"
-            />
-          </div>
-        </div>
-      </section>
+      {/* 2. VISUAL BREAK - 2 Columns Full Width (movido más abajo entre Bio y Misión) */}
 
       {/* 3. PRINCIPIOS (Acordeón) */}
       <section className="w-full px-2 sm:px-4 lg:px-6 pb-24">
@@ -201,6 +181,36 @@ export default function EstudioPage() {
         </div>
       </section>
 
+      {/* 4.1 VISUAL BREAK (entre Bio y Misión) */}
+      <section className="w-full mb-24 px-2 sm:px-4 lg:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+          <div className="relative h-[600px] md:h-[800px] w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/images/estudio/1.jpg"
+              alt="Detalle de proceso"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-1000"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                img.src = "/images/placeholder.svg";
+              }}
+            />
+          </div>
+          <div className="relative h-[600px] md:h-[800px] w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/images/estudio/2.jpg"
+              alt="Detalle de taller"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-1000"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                img.src = "/images/placeholder.svg";
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* 5. MISIÓN */}
       <section className="w-full px-2 sm:px-4 lg:px-6 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 w-full">
@@ -265,18 +275,26 @@ export default function EstudioPage() {
          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
             <div className="aspect-[4/5] relative rounded-3xl overflow-hidden">
                <Image 
-                 src="/images/10work.avif" 
+                 src="/images/estudio/3.jpg" 
                  alt="Detalle de proceso" 
                  fill 
                  className="object-cover hover:scale-105 transition-transform duration-1000" 
+                 onError={(e) => {
+                   const img = e.currentTarget as HTMLImageElement;
+                   img.src = "/images/placeholder.svg";
+                 }}
                />
             </div>
             <div className="aspect-[4/5] relative rounded-3xl overflow-hidden">
                <Image 
-                 src="/images/11work.avif" 
+                 src="/images/estudio/4.jpg" 
                  alt="Detalle de materiales" 
                  fill 
                  className="object-cover hover:scale-105 transition-transform duration-1000" 
+                 onError={(e) => {
+                   const img = e.currentTarget as HTMLImageElement;
+                   img.src = "/images/placeholder.svg";
+                 }}
                />
             </div>
          </div>

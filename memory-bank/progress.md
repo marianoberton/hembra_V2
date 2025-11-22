@@ -224,3 +224,7 @@ The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora"
 [2025-11-22] servicios: Preparar carpeta y tracking para imágenes reales. Links: origin/main
   - Agregué `.gitkeep` y `README.md` en `public/images/servicios/`.
   - Confirmé remotos: usaremos `origin` (repo anterior) para subir imágenes.
+[2025-11-22] estudio: Mover bloque de imágenes y usar 1.jpg–4.jpg. Links: PR pendiente
+  - Se movió el bloque de 2 imágenes para ubicarlo entre Bio y Misión.
+  - Se actualizaron las rutas a public/images/estudio/1.jpg–4.jpg en orden.
+  - Se agregó fallback a /images/placeholder.svg para evitar roturas si faltan archivos.
