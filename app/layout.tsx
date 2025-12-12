@@ -45,7 +45,7 @@ export default function RootLayout({
       </head>
       {/* El body tiene el color del footer para dar continuidad visual si hay rebote de scroll */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased overflow-x-hidden bg-[#d0ddc3]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased overflow-x-hidden bg-white`}
       >
         <CartProvider>
           <DynamicBackground />
@@ -70,3 +70,4 @@ export default function RootLayout({
     </html>
   );
 }
+

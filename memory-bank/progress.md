@@ -232,3 +232,9 @@ The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora"
  - Se agregó `MainShell` para usar fondo #d0ddc3 en Home y #f2f2f2 en el resto.
  - `layout.tsx` ahora monta `MainShell` en vez de un div con fondo fijo.
  - `HomeContent` pasa a `bg-transparent` para no forzar fondo blanco.
+
+## [2025-02-23] Ajuste de color en Home (Corrección)
+- **Corrección**: Se ajustó el color de fondo de la Home para que sea **blanco (#ffffff)**, coincidiendo con la barra de navegación en esa ruta, en lugar del verde previamente aplicado.
+- **Componentes**: `MainShell` y `Footer` ahora detectan la ruta Home para aplicar fondo blanco.
+- **Otras rutas**: Mantienen el esquema anterior (contenedor gris, body/footer verde).
+- **Layout**: Se cambió el color base del body a blanco para evitar flashes de color en la carga inicial de la Home.
