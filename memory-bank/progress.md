@@ -228,3 +228,7 @@ The demo at `/premium-demo` showcases exactly what "muchísimo margen de mejora"
   - Se movió el bloque de 2 imágenes para ubicarlo entre Bio y Misión.
   - Se actualizaron las rutas a public/images/estudio/1.jpg–4.jpg en orden.
   - Se agregó fallback a /images/placeholder.svg para evitar roturas si faltan archivos.
+[2025-12-12] Home: Alineación de color entre body/contenedor/footer. Links: https://github.com/marianoberton/hembra_V2/pull/ (pending)
+ - Se agregó `MainShell` para usar fondo #d0ddc3 en Home y #f2f2f2 en el resto.
+ - `layout.tsx` ahora monta `MainShell` en vez de un div con fondo fijo.
+ - `HomeContent` pasa a `bg-transparent` para no forzar fondo blanco.
