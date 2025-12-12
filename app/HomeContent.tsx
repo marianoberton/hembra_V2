@@ -30,10 +30,10 @@ const cardWrapperClass = "relative rounded-2xl hover:z-50 transition-all duratio
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-transparent">
       
       <motion.div 
-        className="w-full px-2 sm:px-4 lg:px-4 pb-12 pt-4"
+        className="w-full px-2 sm:px-4 lg:px-4 pb-6 pt-4"
         style={{ paddingTop: '20px' }}
         variants={containerVariants}
         initial="hidden"

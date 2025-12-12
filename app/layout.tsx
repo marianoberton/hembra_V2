@@ -5,6 +5,7 @@ import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header";
 import DynamicBackground from "./components/DynamicBackground";
 import Footer from "./components/Footer";
+import MainShell from "./components/MainShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -54,12 +55,12 @@ export default function RootLayout({
              2. Quitamos 'flex', 'flex-col' -> No necesitamos estirar el main.
              3. Agregamos 'pb-12' o 'pb-16' -> Espacio de seguridad antes del borde redondeado.
           */}
-          <div className="relative z-10 bg-[#f2f2f2] shadow-2xl rounded-b-[40px] overflow-hidden pb-4">
+          <MainShell>
             <Header />
             <main>
               {children}
             </main>
-          </div>
+          </MainShell>
 
           {/* Footer fijo detrás */}
           <Footer />
